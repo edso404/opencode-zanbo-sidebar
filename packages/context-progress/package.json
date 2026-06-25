@@ -19,7 +19,10 @@
       "default": "./dist/tui.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -28,7 +31,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["opencode", "opencode-plugin", "sidebar", "context"],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "sidebar",
+    "context"
+  ],
   "license": "MIT",
   "engines": {
     "opencode": ">=1.4.3"
