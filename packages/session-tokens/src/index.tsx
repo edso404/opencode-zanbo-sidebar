@@ -10,7 +10,12 @@ function safeNumber(value: unknown): number {
   return typeof value === "number" && Number.isFinite(value) ? value : 0;
 }
 
-function spentTokenCount(tokens: any): number {
+function spentTokenCount(tokens: {
+  input?: unknown;
+  output?: unknown;
+  reasoning?: unknown;
+  cache?: { write?: unknown };
+}): number {
   const input = safeNumber(tokens?.input);
   const output = safeNumber(tokens?.output);
   const reasoning = safeNumber(tokens?.reasoning);
@@ -30,8 +35,8 @@ function shortModelLabel(label: string): string {
 function View(props: { api: TuiPluginApi; sessionID: string }) {
   const [open, setOpen] = createSignal(false);
   const theme = () => props.api.theme.current;
-  const messages = createMemo(() => props.api.state.session.messages(props.sessionID) as any[]);
-  const session = createMemo(() => props.api.state.session.get(props.sessionID) as any);
+  const messages = createMemo(() => props.api.state.session.messages(props.sessionID));
+  const session = createMemo(() => props.api.state.session.get(props.sessionID));
 
   const data = createMemo(() => {
     const totals = new Map<string, number>();

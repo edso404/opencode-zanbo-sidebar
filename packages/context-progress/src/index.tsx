@@ -18,7 +18,14 @@ function safeNumber(value: unknown): number {
   return typeof value === "number" && Number.isFinite(value) ? value : 0;
 }
 
-function messageTokenCount(message: any): number {
+function messageTokenCount(message: {
+  tokens?: {
+    input?: unknown;
+    output?: unknown;
+    reasoning?: unknown;
+    cache?: { read?: unknown; write?: unknown };
+  };
+}): number {
   const input = safeNumber(message?.tokens?.input);
   const output = safeNumber(message?.tokens?.output);
   const reasoning = safeNumber(message?.tokens?.reasoning);
@@ -37,10 +44,9 @@ function buildBar(percent: number): { bar: string; clamped: number } {
 }
 
 function View(props: { api: TuiPluginApi; sessionID: string }) {
-  const messages = createMemo(() => props.api.state.session.messages(props.sessionID) as any[]);
+  const messages = createMemo(() => props.api.state.session.messages(props.sessionID));
   const sessionCost = createMemo(() => {
-    const sessionState = (props.api.state as any)?.session;
-    const fromState = safeNumber(sessionState?.get?.(props.sessionID)?.cost);
+    const fromState = safeNumber(props.api.state.session.get(props.sessionID)?.cost);
     if (fromState > 0) return fromState;
 
     return messages()
