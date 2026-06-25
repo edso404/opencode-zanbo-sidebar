@@ -1,12 +1,12 @@
-# @zanbo — OpenCode TUI Plugins
+# @oh-my-sidebar — OpenCode TUI Plugins
 
-Monorepo for OpenCode TUI sidebar plugins, published as scoped npm packages under `@zanbo/`.
+Monorepo for OpenCode TUI sidebar plugins, published as scoped npm packages under `@oh-my-sidebar/`.
 
 ## Packages
 
 | Package | Description |
 |---------|-------------|
-| [@zanbo/opencode-context-progress](./packages/context-progress) | Context usage progress bar for OpenCode sidebar |
+| [@oh-my-sidebar/opencode-context-progress](./packages/context-progress) | Context usage progress bar for OpenCode sidebar |
 
 ## Getting Started
 

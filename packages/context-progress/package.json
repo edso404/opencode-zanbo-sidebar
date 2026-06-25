@@ -1,5 +1,5 @@
 {
-  "name": "@zanbo/opencode-context-progress",
+  "name": "@oh-my-sidebar/opencode-context-progress",
   "version": "0.1.0",
   "description": "OpenCode TUI sidebar plugin for context usage progress",
   "repository": {

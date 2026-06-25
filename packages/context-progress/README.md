@@ -1,4 +1,4 @@
-# @zanbo/opencode-context-progress
+# @oh-my-sidebar/opencode-context-progress
 
 OpenCode TUI sidebar plugin that displays the current session's context usage progress.
 
@@ -12,7 +12,7 @@ OpenCode TUI sidebar plugin that displays the current session's context usage pr
 ## Installation
 
 ```bash
-npm install @zanbo/opencode-context-progress
+npm install @oh-my-sidebar/opencode-context-progress
 ```
 
 ## Usage
@@ -22,8 +22,8 @@ Register the plugin in your OpenCode configuration:
 ```json
 {
   "plugins": {
-    "zanbo.context-progress": {
-      "tui": "@zanbo/opencode-context-progress/tui"
+    "oh-my-sidebar.context-progress": {
+      "tui": "@oh-my-sidebar/opencode-context-progress/tui"
     }
   }
 }
