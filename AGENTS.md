@@ -1,11 +1,11 @@
-# @zanbo Monorepo
+# @oh-my-sidebar Monorepo
 
 **Generated:** 2026-06-25
 **Stack:** pnpm 9+ · Turborepo 2.x · tsup · Biome · Vitest · changesets
 
 ## OVERVIEW
 
-pnpm monorepo for publishing scoped npm packages under `@zanbo/xxx`. Each sub-package lives in `packages/` and is independently versioned via changesets.
+pnpm monorepo for publishing scoped npm packages under `@oh-my-sidebar/xxx`. Each sub-package lives in `packages/` and is independently versioned via changesets.
 
 ## STRUCTURE
 
@@ -13,7 +13,7 @@ pnpm monorepo for publishing scoped npm packages under `@zanbo/xxx`. Each sub-pa
 ./
 ├── .changeset/           # changeset config + pending changeset markdown files
 ├── .github/workflows/    # CI (push+PR) + Release (main branch, OIDC publish)
-├── packages/             # @zanbo/* packages (create per sub-project)
+├── packages/             # @oh-my-sidebar/* packages (create per sub-project)
 ├── pnpm-workspace.yaml   # workspace definition + catalog version lock
 ├── turbo.json            # task pipeline (build/dev/lint/test/typecheck)
 ├── tsconfig.base.json    # shared TS compiler options
@@ -32,8 +32,8 @@ pnpm monorepo for publishing scoped npm packages under `@zanbo/xxx`. Each sub-pa
 
 ## CONVENTIONS
 
-- **Package names**: `@zanbo/<name>` with `"access": "public"` in changesets config
-- **Inter-package deps**: `"@zanbo/other": "workspace:*"` (auto via `.npmrc`)
+- **Package names**: `@oh-my-sidebar/<name>` with `"access": "public"` in changesets config
+- **Inter-package deps**: `"@oh-my-sidebar/other": "workspace:*"` (auto via `.npmrc`)
 - **Version lock**: All shared devDeps in `pnpm-workspace.yaml` catalog with `catalogMode: strict`
 - **Build**: tsup for each package (ESM+CJS dual output + .d.ts)
 - **Type checking**: `tsc --noEmit` (separate from build)

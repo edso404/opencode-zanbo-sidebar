@@ -1,4 +1,4 @@
-# @zanbo/opencode-context-progress
+# @oh-my-sidebar/opencode-context-progress
 
 ## 0.1.0
 
